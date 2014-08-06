@@ -9,17 +9,17 @@
     <property name="jar.file" value="target/${jar}.jar" />
     <property name="jar.docfile" value="target/${jar}-javadoc.jar" />
     <property name="jar.srcfile" value="target/${jar}-sources.jar" />
+    <property name="deps.dir" value="dependencies"/>
 
     <path id="compile.classpath">
-        <fileset dir="${jar.dir}">
-            <include name="jna.jar" />
+        <fileset dir="${deps.dir}">
+            <include name="*.jar" />
         </fileset>
     </path>
 
     <path id="test.classpath">
-        <fileset dir="${jar.dir}">
-            <include name="jna.jar" />
-            <include name="junit.jar" />
+        <fileset dir="${deps.dir}">
+            <include name="*.jar" />
         </fileset>
         <pathelement location="target/classes" />
         <pathelement location="target/testclasses" />
